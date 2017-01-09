@@ -1,14 +1,21 @@
 group 'com.fxloh'
 version '1.0-SNAPSHOT'
 
+apply plugin: 'idea'
 apply plugin: 'java'
+apply plugin: 'maven-publish'
 
-sourceCompatibility = 1.5
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.0.0-M3'
+    testCompile group: 'org.easytesting', name: 'fest-assert', version: '1.4'
+
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.5'
+
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.0.11.Final'
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.0.11.Final'
 }
